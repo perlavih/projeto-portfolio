@@ -7,3 +7,340 @@
   --destaque-inverso
   --fundo-card
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo-principal: #f5f5f5;
+  --texto: #222222;
+  --texto-inverso: #ffffff;
+  --destaque: #0077ff;
+  --destaque-inverso: #66bbff;
+  --fundo-card: #ffffff;
+}
+
+body.escuro {
+  --fundo-principal: #222222;
+  --texto: #f5f5f5;
+  --texto-inverso: #333333;
+  --destaque: #66bbff;
+  --destaque-inverso: #0077ff;
+  --fundo-card: #444444;
+}
+
+html {
+  background-color: var(--destaque);
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto);
+  line-height: 1.5em;
+}
+
+header {
+  background-color: var(--destaque);
+  color: var(--texto);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav#menu {
+  width: 100%;
+}
+
+nav#menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+nav#menu a {
+  color: var(--texto-inverso);
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav#menu a:hover {
+  background-color: var(--destaque-inverso);
+  color: var(--texto);
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto 90vw auto;
+  margin-top: 20px;
+}
+
+section#ficha {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  grid-column: 2;
+}
+
+section#ficha img {
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  aspect-ratio: 1/1;
+  border: 5px solid var(--fundo-card);
+  outline: 3px dashed var(--destaque);
+  display: block;
+  margin: auto;
+}
+
+section#ficha h1 {
+  text-align: center;
+  color: var(--destaque);
+  margin: 20px 0;
+  font-size: 1.8em;
+}
+
+section#ficha p {
+  text-align: center;
+  color: var(--texto);
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+div#social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.5em;
+}
+
+div#social a {
+  color: var(--destaque);
+  transition: color 0.3s;
+}
+
+div#social a:hover {
+  color: var(--destaque-inverso);
+}
+
+section#detalhes {
+  grid-column: 2;
+}
+article {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h2 {
+  color: var(--destaque);
+  margin-bottom: 20px;
+}
+
+#skill {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#skill .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#skill .nome {
+  font-weight: bold;
+  color: var(--texto);
+}
+
+#skill .porcentagem {
+  color: var(--destaque);
+  font-weight: bold;
+}
+
+#skill .barra {
+  width: 100%;
+  height: 7px;
+  background-color: var(--fundo-principal);
+  border-radius: 3.5px;
+  overflow: hidden;
+}
+
+#skill .barra .progresso {
+  height: 100%;
+  background-color: var(--destaque);
+  border-radius: 3.5px;
+}
+
+#formacao-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#formacao-container .curso {
+  background-color: var(--fundo-principal);
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 5px solid var(--destaque);
+  padding-left: 10px;
+  transition: border-left-color 0.3s, border-left-width 0.3s;
+}
+
+#formacao-container .curso:hover {
+  border-left-color: var(--destaque-inverso);
+  border-left-width: 10px;
+  cursor: pointer;
+}
+
+#formacao-container .periodo {
+  color: var(--texto);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+#formacao-container .instituicao {
+  color: var(--destaque);
+  font-size: 1.1em;
+}
+
+#projetos-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#projetos-container .projeto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  background-color: var(--fundo-principal);
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 5px solid var(--destaque);
+  padding-left: 10px;
+  transition: border-left-color 0.3s, border-left-width 0.3s;
+  align-items: stretch;
+}
+
+#projetos-container .projeto:hover {
+  border-left-color: var(--destaque-inverso);
+  border-left-width: 10px;
+  cursor: pointer;
+}
+
+#projetos-container .foto {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+#projetos-container .projeto .info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  font-style: justify;
+}
+
+.info > button {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px;
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.info > button:hover {
+  background-color: var(--destaque-inverso);
+  color: var(--texto);
+}
+
+footer {
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
+}
+
+footer p {
+  font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+  #skill {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #projetos-container .projeto {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  #projetos-container .projeto .info {
+    max-width: 60%;
+  }
+
+  #projetos-container .projeto .foto {
+    aspect-ratio: 1/1;
+    max-width: 40%;
+    max-height: 250px;
+  }
+
+  main {
+    grid-template-columns: 1fr minmax(260px, 320px) minmax(0, 720px) 1fr;
+    column-gap: 24px;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 64px;
+  }
+
+  section#detalhes{
+    grid-column: 3 / 4;
+  }
+
+  header {
+    justify-content: flex-end;
+  }
+
+  nav#menu {
+    width: auto;
+  }
+
+  nav#menu ul {
+    justify-content: center;
+    width: auto;
+  }
+}
